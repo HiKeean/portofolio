@@ -9,6 +9,24 @@ export default {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			'meow-script': ['"Meow Script"', 'cursive'],
+		  },
+		  animation: {
+			'open-from-center': 'openFromCenter 1.5s ease-in-out forwards',
+			'split-open': 'splitOpen 1.5s ease-in-out forwards',
+		  },
+		  keyframes: {
+			openFromCenter: {
+			  '0%': { clipPath: 'circle(0% at 50% 50%)' },
+			  '100%': { clipPath: 'circle(150% at 50% 50%)' },
+			},
+			splitOpen: {
+			  '0%': { transform: 'scaleX(1)' },
+			  '50%': { transform: 'scaleX(0.005)' },
+			  '100%': { transform: 'scaleX(0)' },
+			},
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
