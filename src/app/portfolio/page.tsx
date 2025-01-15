@@ -22,6 +22,7 @@ interface ImageItem {
   description: string
 }
 
+
 export default function ImageGallery() {
   const [imageData, setImageData] = useState<ImageItem[]>([])
   const [selectedImage, setSelectedImage] = useState<ImageItem | null>(null)
@@ -56,7 +57,7 @@ export default function ImageGallery() {
           if (jangandibuka) {
             try {
               const { id: idProject } = JSON.parse(jangandibuka)
-              const projectToOpen = mappedData.find(item => item.id === idProject)
+              const projectToOpen = mappedData.find((item: { id: any }) => item.id === idProject)
               if (projectToOpen) {
                 setSelectedImage(projectToOpen)
                 setCurrentImageIndex(0)
@@ -153,8 +154,8 @@ export default function ImageGallery() {
             <h2 className="text-2xl font-bold mb-4">{(selectedImage || hoveredImage)?.title}</h2>
             <div className="relative mb-4">
               <Image
-                src={(selectedImage || hoveredImage)?.images[currentImageIndex]}
-                alt={(selectedImage || hoveredImage)?.title}
+                src={(selectedImage || hoveredImage)?.images[currentImageIndex] || '/placeholder.svg'}
+                alt={(selectedImage || hoveredImage)?.title || 'Fallback Title'}
                 width={1000}
                 height={600}
                 className="rounded shadow-lg"
@@ -177,7 +178,7 @@ export default function ImageGallery() {
                   variant="outline"
                   size="icon"
                   onClick={handleNext}
-                  disabled={currentImageIndex === (selectedImage || hoveredImage).images.length - 1}
+                  disabled={currentImageIndex === (selectedImage || hoveredImage)!.images.length - 1}
                   className="rounded-full bg-black/50 text-white hover:bg-black/75"
                 >
                   <ChevronRight className="h-4 w-4" />

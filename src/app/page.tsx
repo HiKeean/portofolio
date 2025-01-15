@@ -1,11 +1,9 @@
 "use client"
 import { TypeAnimation } from 'react-type-animation';
-import About from './about/page';
-import Hero from './Hero/page';
-import Skills from './skills/page';
-import Resume from './resume/page';
-import Portfolio from './portfolio/page';
-import PortfolioPage from '@/components/Layout/portofoliolayout';
+import About from '../components/about/page';
+import Hero from '../components/Hero/page';
+import Skills from '../components/skills/page';
+import Resume from '../components/resume/page';
 import { useEffect, useState } from 'react';
 import OpeningAnimation from '@/components/openingDisplay';
 
