@@ -38,8 +38,8 @@ export default function Hero() {
       <div className="flex flex-col items-center justify-center flex-1">
         <div className="flex-shrink-0">
           <Image
-            src={Picturess || "/assets/images/depan.jpg"} // Ganti dengan path gambar Anda
-            alt="Your Picture"
+            src={Picturess || "/assets/temporary-profile-placeholder-1.jpg"} // Ganti dengan path gambar Anda
+            alt="Profile Picture"
             width={200} // Sesuaikan ukuran gambar
             height={200} // Sesuaikan ukuran gambar
             className="rounded-full" // Membuat gambar berbentuk bulat

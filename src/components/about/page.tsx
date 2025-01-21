@@ -147,7 +147,7 @@ export default function About() {
           </div>
        
           <button
-            onClick={() => scrollToSection('garis-skills')}
+            onClick={() => scrollToSection('garis-resume')}
             className="text-gray-700 hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
           >
             Scroll for next information

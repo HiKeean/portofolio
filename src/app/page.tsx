@@ -27,6 +27,10 @@ export default function Home() {
           <hr />
         </section>
         <About/>
+        <section id='garis-resume'>
+          <hr />
+        </section>
+        <Resume/>
         <section id='garis-skills'>
           <hr />
         </section>

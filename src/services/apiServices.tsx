@@ -18,7 +18,7 @@ export const getText = async () => {
 
 export const fetchDataApi = async (endpoint: any, params = {}) => {
   try {
-    const url = new URL(`${API_URL_2}/${endpoint}`);
+    const url = new URL(`${API_URL}/${endpoint}`);
     url.search = new URLSearchParams(params).toString(); 
 
     const response = await fetch(url);

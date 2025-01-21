@@ -19,6 +19,7 @@ interface ImageItem {
   category: string
   projectDate: string
   link: string
+  text: string
   description: string
 }
 
@@ -48,6 +49,7 @@ export default function ImageGallery() {
             category: item.category,
             projectDate: item.project_date,
             link: item.link,
+            text: item.text,
             description: item.desc,
           }))
           setImageData(mappedData)
@@ -217,7 +219,7 @@ export default function ImageGallery() {
                       rel="noopener noreferrer"
                       className="text-blue-400 hover:underline"
                     >
-                      {(selectedImage || hoveredImage)?.link}
+                      {(selectedImage || hoveredImage)?.text}
                     </a>
                   </p>
                 </div>

@@ -67,6 +67,15 @@ const FlipCard = ({ item, isLanguage = false }: { item: Skill | Language; isLang
     }
   }
 
+  function skil(value:number){
+    if(value == 1){
+      return "beginner"
+    }
+    if(value == 2)return "intermediate"
+    if(value == 3)return "advanced"
+  }
+  
+
   return (
     <motion.div
       className="mb-4 cursor-pointer perspective"
@@ -90,10 +99,10 @@ const FlipCard = ({ item, isLanguage = false }: { item: Skill | Language; isLang
                 {isLanguage ? (
                   <Badge variant="secondary">{(item as Language).label}</Badge>
                 ) : (
-                  <span className="text-sm text-muted-foreground">{item.value}%</span>
+                  <Badge variant="secondary">{skil(item.value)}</Badge>
                 )}
               </div>
-              <Progress value={item.value} className="w-full" />
+              <Progress value={item.value * 33} className="w-full" />
               <p className="text-sm text-gray-500 mt-2 text-center">Click card to see list projects</p>
             </div>
           ) : (
@@ -136,7 +145,7 @@ export default function Skills() {
       if (data.success) {
         const formattedSkills: Skill[] = data.data.map((apiSkill: ApiSkill) => ({
           name: apiSkill.name,
-          value: apiSkill.competence * 33.33, // Convert 1-3 scale to percentage
+          value: apiSkill.competence, // Convert 1-3 scale to percentage
           icon: getIconComponent(apiSkill.icon),
           projects: apiSkill.projects
         }))
